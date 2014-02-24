@@ -23,31 +23,39 @@ Source directory contains three sub directories. Each points to one of the three
 preprocess
 ---------
 
-* **GAPPFile**				: GAPP file for Preprocessing . A sample gapp file can be found at gappFile/ml_data_preprocessing.gapp
-* AnnotationTypesRequired : Annotation name which you want to inject the class label.By default its Sentence.You can add your own custom
+* **GAPPFile :** GAPP file for Preprocessing . A sample gapp file can be found at gappFile/ml_data_preprocessing.gapp
+* **AnnotationTypesRequired :** Annotation name which you want to inject the class label.By default its Sentence.You can add your own custom
 annotations here. 
 If you are using a annotation other than GATE default annotations , make sure to build the gapp files using that PR's
-* CorpusName 				: Name of the corpus
-* inputDir 				: Contains training files as .txt files. At the time of preprocessing , the directory name is treated as
+* **CorpusName :** Name of the corpus
+* **inputDir :** Contains training files as .txt files. At the time of preprocessing , the directory name is treated as
 the class label for all the txt files in it. Expects simple directory hierarchy like [20news-group-data](http://qwone.com/~jason/20Newsgroups/)
-* outputDir 				: Output GATE XML's are stored here
-* removeStopWords			: Removing stopwords or not ( true / false )
+* **outputDir :** Output GATE XML's are stored here
+* **removeStopWords :** Removing stopwords or not ( true / false )
 
 training
 --------
 
-* GAPPFile  				: GAPP file for Training . A sample gapp file can be found at gappFile/ml_training.gapp
-* CorpusName 				: Name of the corpus
-* xmlCorpus 				: outputDir of Preprocess mode
+* **GAPPFile :** GAPP file for Training . A sample gapp file can be found at gappFile/ml_training.gapp
+* **CorpusName :** Name of the corpus
+* **xmlCorpus :** outputDir of Preprocess mode
 
 The ml-config.xml is under this folder , so default location of trained model is here.
 
 application
 ----------
 
-* GAPPFile					: GAPP file for Preprocessing . A sample gapp file can be found at gappFile/ml_application.gapp
-* CorpusName 				: Name of the corpus
-* removeStopWords			: Removing stopwords or not ( true / false )
+* **GAPPFile :** GAPP file for Preprocessing . A sample gapp file can be found at gappFile/ml_application.gapp
+* **CorpusName :** Name of the corpus
+* **removeStopWords :** Removing stopwords or not ( true / false )
+
+GAPP Files
+==========
+Sample gapp files can be found here.
+
+* **ml_data_preprocessing.gapp : ** ANNIE with defaults ( with out NE Transducer and Ortho Matcher) 
+* **ml_training.gapp :** Batch Learning PR with ml-config.xml from sources/training
+* **ml_application.gapp:** ANNIE with defaults ( with out NE Transducer and Ortho Matcher) and Batch Learning PR
 
 GATE-ML Work Flow
 =========
@@ -60,7 +68,7 @@ If the learningMode is Training then the system takes sources/training folder as
 
 If the learningMode is Application then the system takes sources/application folder as configuration directory. 
 
-Dependency Projects
+Dependency Project
 ===================
 * [StringHelpers](https://github.com/srijiths/StringHelpers)
 
