@@ -53,9 +53,9 @@ GAPP Files
 ==========
 Sample gapp files can be found here.
 
-* **ml_data_preprocessing.gapp : ** ANNIE with defaults ( with out NE Transducer and Ortho Matcher) 
+* **ml_data_preprocessing.gapp :** ANNIE with defaults ( with out NE Transducer and Ortho Matcher) 
 * **ml_training.gapp :** Batch Learning PR with ml-config.xml from sources/training
-* **ml_application.gapp:** ANNIE with defaults ( with out NE Transducer and Ortho Matcher) and Batch Learning PR
+* **ml_application.gapp :** ANNIE with defaults ( with out NE Transducer and Ortho Matcher) and Batch Learning PR
 
 GATE-ML Work Flow
 =========
