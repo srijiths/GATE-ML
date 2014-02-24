@@ -1,6 +1,6 @@
 GATE-ML
 =======
-Machine Learning in GATE Embedded GATE. This package contains 3 phases.
+Machine Learning in GATE as Embedded. This package contains 3 phases.
 
 * Preprocessing : Read input text files and create GATE XML files
 * Training		: Train GATE XML files and create a model
@@ -18,12 +18,12 @@ Inital property needed for the system to run
 
 Sources Directory
 ================
-Source directory contains three sub directories. Each of which point to any of the three learning modes.
+Source directory contains three sub directories. Each points to one of the three learning modes.
 
 preprocess
 ---------
 
-* GAPPFile				: GAPP file for Preprocessing . A sample gapp file can be found at gappFile/ml_data_preprocessing.gapp
+* _GAPPFile_				: GAPP file for Preprocessing . A sample gapp file can be found at gappFile/ml_data_preprocessing.gapp
 * AnnotationTypesRequired : Annotation name which you want to inject the class label.By default its Sentence.You can add your own custom
 annotations here. 
 If you are using a annotation other than GATE default annotations , make sure to build the gapp files using that PR's
@@ -40,7 +40,7 @@ training
 * CorpusName 				: Name of the corpus
 * xmlCorpus 				: outputDir of Preprocess mode
 
-The ml-config.xml is under this folder , so a default location of trained model is here.
+The ml-config.xml is under this folder , so default location of trained model is here.
 
 application
 ----------
