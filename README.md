@@ -19,29 +19,32 @@ Sources Directory
 ================
 Source directory contains three sub directories. Each of which point to any of the three learning modes.
 
-preprocess directory contains properties for preprocess learning mode. The properties are
+preprocess
+==========
 
-GAPPFile				: GAPP file for Preprocessing . A sample gapp file can be found at gappFile/ml_data_preprocessing.gapp
-AnnotationTypesRequired : Annotation name which you want to inject the class label.By default its Sentence.You can add your own custom
+* GAPPFile				: GAPP file for Preprocessing . A sample gapp file can be found at gappFile/ml_data_preprocessing.gapp
+* AnnotationTypesRequired : Annotation name which you want to inject the class label.By default its Sentence.You can add your own custom
 annotations here. 
 If you are using a annotation other than GATE default annotations , make sure to build the gapp files using that PR's
-CorpusName 				: Name of the corpus
-inputDir 				: Contains training files as .txt files. At the time of preprocessing , the directory name is treated as
+* CorpusName 				: Name of the corpus
+* inputDir 				: Contains training files as .txt files. At the time of preprocessing , the directory name is treated as
 the class label for all the txt files in it. Expects simple directory hierarchy like 
-outputDir 				: Output GATE XML's are stored here
-removeStopWords			: Removing stopwords or not ( true / false )
+* outputDir 				: Output GATE XML's are stored here
+* removeStopWords			: Removing stopwords or not ( true / false )
 
-training directory contains properties for training . The properties are
+training
+========
 
-GAPPFile  				: GAPP file for Training . A sample gapp file can be found at gappFile/ml_training.gapp
-CorpusName 				: Name of the corpus
-xmlCorpus 				: outputDir of Preprocess mode
+* GAPPFile  				: GAPP file for Training . A sample gapp file can be found at gappFile/ml_training.gapp
+* CorpusName 				: Name of the corpus
+* xmlCorpus 				: outputDir of Preprocess mode
 
-application directory contains properties for classification . The properties are
+application
+==========
 
-GAPPFile				: GAPP file for Preprocessing . A sample gapp file can be found at gappFile/ml_application.gapp
-CorpusName 				: Name of the corpus
-removeStopWords			: Removing stopwords or not ( true / false )
+* GAPPFile					: GAPP file for Preprocessing . A sample gapp file can be found at gappFile/ml_application.gapp
+* CorpusName 				: Name of the corpus
+* removeStopWords			: Removing stopwords or not ( true / false )
 
 
 
