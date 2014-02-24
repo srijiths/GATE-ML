@@ -7,23 +7,41 @@ Machine Learning in GATE as JAVA Embedded. This package contains 3 phases
 * Training
 * Application
 
-GATE_Learning.java is the main program which takes arguments from the global property file GATE_ML.properties.
-
-* GATE_ML.properties
+Property files
 ====================
+GATE_ML.properties
+
 * GATE_HOME 		: GATE HOME in your system
 * learningMode		: Three modes are : Preprocessing,Training and Application
 * sourceDirectory 	: contains all the property files for the above 3 learning modes
 
 Sources Directory
 ================
-It contains three sub directories:
+Source directory contains three sub directories. Each of which point to any of the three learning modes.
 
-* preprocess : it contains preprocess.properties and annotationsRequired.txt
-preprocess.properties has below properties
-GAPPFile 				: GAPP file to load for Data Preprocessing. 
-A Sample gapp file can be found at gappFiles/ml_data_preprocessing.gapp
-AnnotationTypesRequired 
+preprocess directory contains properties for preprocess learning mode. The properties are
+
+GAPPFile				: GAPP file for Preprocessing . A sample gapp file can be found at gappFile/ml_data_preprocessing.gapp
+AnnotationTypesRequired : Annotation name which you want to inject the class label.By default its Sentence.You can add your own custom
+annotations here. 
+If you are using a annotation other than GATE default annotations , make sure to build the gapp files using that PR's
+CorpusName 				: Name of the corpus
+inputDir 				: Contains training files as .txt files. At the time of preprocessing , the directory name is treated as
+the class label for all the txt files in it. Expects simple directory hierarchy like 
+outputDir 				: Output GATE XML's are stored here
+removeStopWords			: Removing stopwords or not ( true / false )
+
+training directory contains properties for training . The properties are
+
+GAPPFile  				: GAPP file for Training . A sample gapp file can be found at gappFile/ml_training.gapp
+CorpusName 				: Name of the corpus
+xmlCorpus 				: outputDir of Preprocess mode
+
+application directory contains properties for classification . The properties are
+
+GAPPFile				: GAPP file for Preprocessing . A sample gapp file can be found at gappFile/ml_application.gapp
+CorpusName 				: Name of the corpus
+removeStopWords			: Removing stopwords or not ( true / false )
 
 
 
