@@ -1,11 +1,10 @@
 GATE-ML
 =======
-
 Machine Learning in GATE as JAVA Embedded. This package contains 3 phases.
 
-* Preprocessing
-* Training
-* Application
+* Preprocessing : Read input text files and create GATE XML files
+* Training		: Train GATE XML files and create a model
+* Application	: Classify a input text using the trained model
 
 Property files
 ====================
@@ -20,39 +19,50 @@ Sources Directory
 Source directory contains three sub directories. Each of which point to any of the three learning modes.
 
 preprocess
-==========
+---------
 
-* GAPPFile				: GAPP file for Preprocessing . A sample gapp file can be found at gappFile/ml_data_preprocessing.gapp
-* AnnotationTypesRequired : Annotation name which you want to inject the class label.By default its Sentence.You can add your own custom
+** GAPPFile:** GAPP file for Preprocessing . A sample gapp file can be found at gappFile/ml_data_preprocessing.gapp
+** AnnotationTypesRequired:** Annotation name which you want to inject the class label.By default its Sentence.You can add your own custom
 annotations here. 
 If you are using a annotation other than GATE default annotations , make sure to build the gapp files using that PR's
-* CorpusName 				: Name of the corpus
-* inputDir 				: Contains training files as .txt files. At the time of preprocessing , the directory name is treated as
-the class label for all the txt files in it. Expects simple directory hierarchy like 
-* outputDir 				: Output GATE XML's are stored here
-* removeStopWords			: Removing stopwords or not ( true / false )
+** CorpusName:** Name of the corpus
+** inputDir:** Contains training files as .txt files. At the time of preprocessing , the directory name is treated as
+the class label for all the txt files in it. Expects simple directory hierarchy like [20news-group-data](http://qwone.com/~jason/20Newsgroups/)
+** outputDir:** Output GATE XML's are stored here
+** removeStopWords:** Removing stopwords or not ( true / false )
 
 training
-========
+--------
 
-* GAPPFile  				: GAPP file for Training . A sample gapp file can be found at gappFile/ml_training.gapp
-* CorpusName 				: Name of the corpus
-* xmlCorpus 				: outputDir of Preprocess mode
+** GAPPFile:** GAPP file for Training . A sample gapp file can be found at gappFile/ml_training.gapp
+** CorpusName:** Name of the corpus
+** xmlCorpus:** outputDir of Preprocess mode
+
+The ml-config.xml is under this folder , so a default location of trained model is here.
 
 application
-==========
+----------
 
-* GAPPFile					: GAPP file for Preprocessing . A sample gapp file can be found at gappFile/ml_application.gapp
-* CorpusName 				: Name of the corpus
-* removeStopWords			: Removing stopwords or not ( true / false )
+** GAPPFile:** GAPP file for Preprocessing . A sample gapp file can be found at gappFile/ml_application.gapp
+** CorpusName:** Name of the corpus
+** removeStopWords:** Removing stopwords or not ( true / false )
 
 GATE-ML Work Flow
 =========
 
-The system initiates from GATE_ML.properties and procees further according to the learningMode.
+Execution starts from GATE_Learning.java which takes GATE_ML.properties and proceed further according to the learningMode.
 
 If the learningMode is Preprocess then the system takes sources/preprocess folder as configuration directory.
 
 If the learningMode is Training then the system takes sources/training folder as configuration directory.
 
 If the learningMode is Application then the system takes sources/application folder as configuration directory. 
+
+Dependency Projects
+===================
+* [StringHelpers](https://github.com/srijiths/StringHelpers)
+
+Build
+=====
+
+Using Maven , mvn clean install assembly:single or mvn clean package
