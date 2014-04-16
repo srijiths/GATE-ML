@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<ML-CONFIG>
+  <VERBOSITY level="0"/>
+  <SURROUND value="false"/>
+
+  <IS-LABEL-UPDATABLE value="true"/>
+  <IS-NLPFEATURELIST-UPDATABLE value="true"/>
+
+  <PARAMETER name="thresholdProbabilityEntity" value="0.2"/>
+  <PARAMETER name="thresholdProbabilityBoundary" value="0.42"/>
+  <PARAMETER name="thresholdProbabilityClassification" value="0.4"/>
+
+  <multiClassification2Binary method="one-vs-others"/>
+
+  <!-- Evaluation : how to split the corpus into test and learn? -->
+  <EVALUATION method="split" runs="2" ratio="0.66"/>
+
+  <FILTERING ratio="0.0" dis="near"/>
+
+  <ENGINE nickname="SVM" implementationName="SVMLibSvmJava" 
+     options=" -c 0.7 -t 0 -m 100 -tau 0.5  "/>
+
+  <DATASET>
+     <INSTANCE-TYPE>Sentence</INSTANCE-TYPE>
+     <NGRAM>
+        <NAME>Sent1gram</NAME>
+        <NUMBER>1</NUMBER>
+        <CONSNUM>2</CONSNUM>
+        <CONS-1>
+            <TYPE>Token</TYPE>
+	    <FEATURE>root</FEATURE>
+         </CONS-1>
+         <CONS-2>
+            <TYPE>Token</TYPE>
+	    <FEATURE>category</FEATURE>
+         </CONS-2> 
+        <WEIGHT>10.0</WEIGHT>                                   
+     </NGRAM>
+                
+     <ATTRIBUTE>
+	<NAME>Class</NAME>
+	<SEMTYPE>NOMINAL</SEMTYPE>
+	<TYPE>Sentence</TYPE>
+	<FEATURE>type</FEATURE>
+	<POSITION>0</POSITION>
+	<CLASS/>
+      </ATTRIBUTE>
+   </DATASET>
+
+</ML-CONFIG>
+
