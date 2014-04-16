@@ -1,5 +1,13 @@
-GATE-ML
-=======
+Why GATE-ML ?
+=============
+Training,Application in GATE Batch Learning PR is already straight forward. You can use GATE GUI to load a corpus , Train and Test it in Batch Learning PR.
+Then what's the scope of GATE-ML ?? 
+* Crazy ?? : NO
+* Reinventing the wheel again ?? : NO
+
+One and Only One Reason :)
+* When you load a very big corpus and try to pre process and train using the GATE GUI;it hangs like HELL.
+
 Machine Learning in GATE as Embedded. This package contains 3 phases.
 
 * Preprocessing : Read input text files and create GATE XML files
@@ -8,6 +16,8 @@ Machine Learning in GATE as Embedded. This package contains 3 phases.
 
 Property files
 ====================
+Reminder for "forward-slash" "backward-slash" change according to the operating system environment.
+
 GATE_ML.properties
 ------------------
 Inital property needed for the system to run
@@ -32,6 +42,7 @@ If you are using a annotation other than GATE default annotations , make sure to
 the class label for all the txt files in it. Expects simple directory hierarchy like [20news-group-data](http://qwone.com/~jason/20Newsgroups/)
 * **outputDir :** Output GATE XML's are stored here
 * **removeStopWords :** Removing stopwords or not ( true / false )
+* **removePunctuation :** Removing punctuations or not ( true / false )
 
 training
 --------
@@ -48,6 +59,7 @@ application
 * **GAPPFile :** GAPP file for Preprocessing . A sample gapp file can be found at gappFile/ml_application.gapp
 * **CorpusName :** Name of the corpus
 * **removeStopWords :** Removing stopwords or not ( true / false )
+* **removePunctuation :** Removing punctuations or not ( true / false )
 
 GAPP Files
 ==========
@@ -60,13 +72,14 @@ Sample gapp files can be found here.
 GATE-ML Work Flow
 =========
 
-Execution starts from GATE_Learning.java which takes GATE_ML.properties and proceed further according to the learningMode.
+Execution starts from GateLearning.java which takes GATE_ML.properties and proceed further according to the learningMode.
 
-If the learningMode is Preprocess then the system takes sources/preprocess folder as configuration directory.
+If the learningMode is "Preprocess" then the system takes sources/preprocess folder as configuration directory.
 
-If the learningMode is Training then the system takes sources/training folder as configuration directory.
+If the learningMode is "Training" then the system takes sources/training folder as configuration directory.
 
-If the learningMode is Application then the system takes sources/application folder as configuration directory. 
+If the learningMode is "Application" then the system takes sources/application folder as configuration directory. This is just a Demo mode , the input text is hard coded
+in GateLearning's executeClassifier method.
 
 Dependency Project
 ===================
