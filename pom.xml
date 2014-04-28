@@ -52,7 +52,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.sree.textbytes.GATE_ML.GATE_Learning</mainClass>
+							<mainClass>com.sree.textbytes.gateml.GateLearning</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>
