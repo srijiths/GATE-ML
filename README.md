@@ -89,3 +89,7 @@ Build
 =====
 
 Using Maven , mvn clean install assembly:single or mvn clean package
+
+License
+=======
+Apache License 2 - http://www.apache.org/licenses/LICENSE-2.0.html
